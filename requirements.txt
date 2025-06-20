@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+python-dotenv
+langchain
+langchain-google-genai
+pypdf
+python-multipart
+beautifulsoup4
+PyMuPDF

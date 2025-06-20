@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WorkMentor.AI - Colombia</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="main-container">
+        <header>
+            <h1>🚀 WorkMentor.AI</h1>
+            <p>Potenciando el talento joven en Colombia</p>
+        </header>
+
+        <section id="upload-section" class="card">
+            <h2>Paso 1: Sube tu Hoja de Vida (PDF)</h2>
+
+            <!-- ===== INICIO DEL BLOQUE AÑADIDO ===== -->
+            <div class="disclaimer">
+                <p>
+                    <strong>Nota sobre el uso de IA:</strong> Es fundamental para nosotros que nuestros usuarios comprendan plenamente el funcionamiento de esta plataforma. Desde el inicio de su interacción, informamos de manera clara que utilizamos tecnologías de Inteligencia Artificial generativa. Queremos subrayar que estas herramientas están diseñadas para actuar como un potente sistema de apoyo y asistencia, ofreciendo recomendaciones y generando contenido para potenciar sus perfiles. Sin embargo, su rol no es el de reemplazar el juicio, la decisión y la validación final que corresponden exclusivamente al usuario humano.
+                </p>
+            </div>
+            <!-- ===== FIN DEL BLOQUE AÑADIDO ===== -->
+            
+            <input type="file" id="cv-upload" accept=".pdf">
+            <input type="text" id="puesto-deseado" placeholder="¿Cuál empleo te gustaría conseguir?">
+            <button id="process-cv-btn">Analizar mi Perfil</button>
+            <div id="loader" class="loader" style="display: none;"></div>
+        </section>
+
+        <div id="results-dashboard" class="hidden">
+            <section id="profile-section" class="card">
+                <h2>Paso 2: Tu Perfil Mejorado</h2>
+                <div id="profile-content"></div>
+            </section>
+
+            <section id="recommendations-section" class="card">
+                <h2>Paso 3: Tus Rutas de Crecimiento</h2>
+                <div class="grid-container">
+                    <div id="formacion-content"><h3>Plan Formativo</h3><p>Haz clic para generar...</p></div>
+                    <div id="ofertas-content"><h3>Ofertas Laborales</h3><p>Haz clic para generar...</p></div>
+                    <div id="carta-content"><h3>Carta de Presentación</h3><p>Haz clic para generar...</p></div>
+                </div>
+            </section>
+
+            <section id="interactive-section" class="card">
+                <h2>Paso 4: ¡A Practicar!</h2>
+                <div class="tabs">
+                    <button class="tab-button active" onclick="openTab(event, 'Simulador')">Simulador de Entrevista</button>
+                    <button class="tab-button" onclick="openTab(event, 'Mentor')">Mentor de Carrera</button>
+                </div>
+
+                <div id="Simulador" class="tab-content">
+                    <div class="chat-window" id="simulador-chat-window"></div>
+                    <div class="chat-input-area">
+                        <input type="text" id="simulador-input" placeholder="Escribe tu respuesta...">
+                        <button id="simulador-send-btn">Enviar</button>
+                    </div>
+                </div>
+
+                <div id="Mentor" class="tab-content" style="display:none;">
+                    <div class="chat-window" id="mentor-chat-window"></div>
+                    <div class="chat-input-area">
+                        <input type="text" id="mentor-input" placeholder="Hazle una pregunta a tu mentor...">
+                        <button id="mentor-send-btn">Enviar</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>

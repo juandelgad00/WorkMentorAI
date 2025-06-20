@@ -1,0 +1,394 @@
+/* frontend/styles.css */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+
+:root {
+    --primary-color: #2F58CD;
+    --secondary-color: #3795BD;
+    --background-color: #F5F5F5;
+    --card-background: #FFFFFF;
+    --text-color: #333;
+    --header-color: #FFF;
+    --shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 20px;
+}
+
+.main-container {
+    max-width: 900px;
+    margin: auto;
+}
+
+header {
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    color: var(--header-color);
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow);
+}
+
+h1 { font-size: 2em; }
+h2 { color: var(--primary-color); border-bottom: 2px solid var(--secondary-color); padding-bottom: 5px; margin-top: 0; }
+h3 { color: var(--secondary-color); }
+
+.card {
+    background-color: var(--card-background);
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow);
+}
+
+#upload-section input[type="file"],
+#upload-section input[type="text"] {
+    display: block;
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+button {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+button:hover { background-color: var(--secondary-color); }
+button:disabled { background-color: #ccc; cursor: not-allowed; }
+
+.hidden { display: none; }
+
+.loader {
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid var(--primary-color);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+.mini-loader {
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid var(--secondary-color);
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#profile-content .summary {
+    background-color: #eef4ff;
+    padding: 10px;
+    border-left: 4px solid var(--primary-color);
+    border-radius: 4px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+.grid-container > div {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #eee;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.grid-container > div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+.grid-container pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    background-color: #fff;
+    padding: 8px;
+    border-radius: 4px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+/* Estilos de Chat y Pestañas */
+.tabs {
+    overflow: hidden;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 15px;
+}
+.tab-button {
+    background-color: inherit;
+    color: var(--text-color);
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 1em;
+}
+.tab-button:hover { background-color: #ddd; }
+.tab-button.active { background-color: #ccc; font-weight: bold; color: var(--primary-color); }
+
+.tab-content { display: none; }
+.chat-window {
+    height: 300px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.evaluacion {
+    background-color: #fffbe6; /* Un amarillo pálido */
+    border-left: 4px solid #f59e0b; /* Un color ámbar */
+    padding: 10px 15px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+}
+
+.evaluacion h4 {
+    color: #b45309;
+    margin-top: 0;
+}
+
+/* En frontend/styles.css, al final del archivo */
+
+.job-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 5px;
+}
+
+.job-list li {
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 6px;
+}
+
+.job-list li a {
+    font-weight: bold;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.job-list li a:hover {
+    text-decoration: underline;
+}
+
+.job-list li small {
+    color: #6c757d;
+}
+
+.disclaimer {
+    background-color: #f8f9fa; /* Un gris muy claro */
+    border-left: 4px solid var(--secondary-color); /* Un borde de acento con tu color secundario */
+    padding: 10px 15px;
+    margin-bottom: 20px; /* Espacio antes del input de archivo */
+    border-radius: 4px;
+}
+
+.disclaimer p {
+    margin: 0;
+    font-size: 0.9em;
+    color: #555; /* Un color de texto ligeramente más suave */
+    line-height: 1.5;
+}
+
+.disclaimer strong {
+    color: var(--primary-color);
+}
+
+.markdown-content {
+    white-space: pre-wrap; /* Respeta los saltos de línea y espacios */
+    text-align: left;
+}
+
+.chat-message { padding: 8px 12px; border-radius: 15px; max-width: 70%; }
+.chat-message.user { background-color: var(--primary-color); color: white; align-self: flex-end; }
+.chat-message.bot { background-color: #E5E5EA; color: black; align-self: flex-start; }
+
+.chat-input-area { display: flex; gap: 10px; }
+.chat-input-area input { flex-grow: 1; padding: 10px; border: 1px solid #ccc; border-radius: 8px; }
+
+#profile-content {
+    line-height: 1.6;
+}
+
+#profile-content h3 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.contact-info {
+    text-align: center;
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+.profile-subsection-title {
+    font-size: 1.2em;
+    color: var(--primary-color);
+    border-bottom: 2px solid #eee;
+    padding-bottom: 8px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+.profile-summary {
+    background-color: #eef4ff;
+    padding: 15px;
+    border-left: 5px solid var(--secondary-color);
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.profile-summary p {
+    margin: 0;
+}
+
+/* Estilos para la lista de Habilidades (tags/pills) */
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skill-item {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+/* Estilos para los bloques de Experiencia y Educación */
+.profile-item {
+    background-color: #fdfdfd;
+    border: 1px solid #f0f0f0;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+}
+
+.item-title {
+    margin: 0 0 5px 0;
+    font-size: 1.05em;
+    color: #333;
+}
+
+.item-subtitle {
+    margin: 0 0 10px 0;
+    font-size: 0.9em;
+    color: #777;
+    font-style: italic;
+}
+
+.item-description {
+    margin: 0;
+    font-size: 0.9em;
+    color: #555;
+}
+
+/* En frontend/styles.css, al final del archivo */
+
+/* Estilos para el Análisis de Idoneidad */
+.rating-bar-container {
+    margin-bottom: 12px;
+    font-size: 0.9em;
+}
+
+.rating-label {
+    display: block;
+    margin-bottom: 4px;
+    font-weight: bold;
+    color: #555;
+}
+
+.rating-bar-background {
+    width: 100%;
+    background-color: #e9ecef;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.rating-bar-foreground {
+    height: 20px;
+    background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
+    color: white;
+    text-align: center;
+    line-height: 20px;
+    font-size: 0.8em;
+    font-weight: bold;
+    border-radius: 5px 0 0 5px;
+    transition: width 0.5s ease-in-out;
+}
+
+.feedback-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.feedback-list li {
+    padding: 8px 12px;
+    margin-bottom: 6px;
+    border-radius: 5px;
+    border-left-width: 4px;
+    border-left-style: solid;
+}
+
+.feedback-list.strong li {
+    background-color: #e6fffa;
+    border-left-color: #38a169;
+}
+
+.feedback-list.weak li {
+    background-color: #fff5f5;
+    border-left-color: #e53e3e;
+}
+
+.feedback-list.suggestion li {
+    background-color: #feebc8;
+    border-left-color: #dd6b20;
+}
+
+.cover-letter-box {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    padding: 15px;
+    white-space: pre-wrap; /* Mantiene el formato pero ajusta las líneas */
+    word-wrap: break-word;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.9em;
+    border-radius: 5px;
+}
